@@ -12,9 +12,15 @@ import { Todo } from '../../Todo';
 export class TodoItemComponent implements OnInit {
   @Input() todo: Todo;
   @Output() todoDelete: EventEmitter<any> = new EventEmitter()
+  @Output() markAsDone: EventEmitter<any> = new EventEmitter()
   onClick(){
 
     this.todoDelete.emit(this.todo)
+
+  }
+  OnDone(){
+    console.log("INSTIDE ONDOEN")
+    this.markAsDone.emit(this.todo)
 
   }
   constructor() { }

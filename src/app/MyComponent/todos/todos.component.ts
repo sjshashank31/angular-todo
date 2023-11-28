@@ -33,6 +33,13 @@ export class TodosComponent implements OnInit {
     localStorage.setItem("todo", JSON.stringify(this.todos))
   }
 
+  markAsDone(todo:Todo){
+    console.log("INSIDE")
+    let index = this.todos.indexOf(todo)
+    this.todos[index].active = false
+    localStorage.setItem("todo", JSON.stringify(this.todos))
+  }
+
 
 
   deleteTodo(todo: Todo){

@@ -1,3 +1,5 @@
 <p>{{todo.sno}} - {{todo.title}} - {{todo.desc }} - {{todo.active ? "Todo" : "Done"}}</p>
 <button class="btn btn-danger" (click)="onClick()">Delete</button>
 
+ <button class="btn btn-warning" *ngIf="todo.active" (click)="OnDone()">Mark as Done</button> 
+
